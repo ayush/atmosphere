@@ -425,6 +425,11 @@ jQuery.atmosphere = function() {
                     request.transport = request.fallbackTransport;
                     jQuery.atmosphere.response.transport = request.fallbackTransport;
                     jQuery.atmosphere.request = request;
+                    
+                    // set the data and request method
+                    jQuery.atmosphere.request.data = data;
+                    jQuery.atmosphere.request.method = "POST";
+
                     jQuery.atmosphere.executeRequest();
 
                     ws.onclose = function(message) {
